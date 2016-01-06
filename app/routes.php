@@ -25,3 +25,9 @@ Route::get('/resume', function()
 {
 	return "This is my resume!";
 });
+
+Route::get('/my-first-view/{name?}', function($name = null)
+{
+	$data = array('name' => $name);
+	return View::make('my-first-view')->with($data);
+});
