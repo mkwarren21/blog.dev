@@ -13,21 +13,30 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
 
 Route::get('/portfolio', function()
 {
-	return "This is my portfolio!";
+	return View::make('portfolio');
 });
 
 Route::get('/resume', function()
 {
-	return "This is my resume!";
+	return View::make('resume');
 });
 
 Route::get('/my-first-view/{name?}', function($name = null)
 {
 	$data = array('name' => $name);
 	return View::make('my-first-view')->with($data);
+});
+
+Route::get('/rolldice/{guess?}', function($guess = null)
+{
+	$randnum = mt_rand(1,6);
+	$data = ['guess' => $guess,
+			 'randnum'=> $randnum	
+				];
+	return View::make('rolldice')->with($data);
 });
