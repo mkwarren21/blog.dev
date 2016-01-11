@@ -9,7 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('index');
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 
@@ -31,17 +32,19 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		// $post = new Post();
-		// $post->title = Input::get('title');
-		// $post->body = Input::get('body');
-		// $result = $post->save();
-		// if($result) {
-		// 	return "Your post was saved!";
-		// } else {
-		// 	return Redirect::back();
-		// }
+		$post = new Post();
+		$post->title = Input::get('title');
+		$post->content = Input::get('content');
+		$post->image = '/img/264H.jpg';
+		$post->date = date('Y-m-d');
+		$result = $post->save();
+		if($result) {
+			return Redirect::action('PostsController@index');
+		} else {
+			return Redirect::back()->withInput();
+		}
 
-		return Redirect::back()->withInput();
+		// return Redirect::back()->withInput();
 	}
 
 
@@ -53,8 +56,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$data = array('id' => $id);
-		return View::make('show')->with($data);
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post', $post);
 	}
 
 
