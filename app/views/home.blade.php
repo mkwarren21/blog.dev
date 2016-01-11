@@ -7,7 +7,7 @@
             <h1>Mary Kaitlin Warren</h1>
             <h3>Full Stack Web Developer</h3>
             <br>
-            <a href="/resume" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
     </header>
 
@@ -153,9 +153,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                    <h3>Play Roll Dice. Pick a number!</h3>
+                    <a href="{{{action('HomeController@showRollDice', array(1))}}}" class="btn btn-lg btn-light">1</a>
+                    <a href="{{{action('HomeController@showRollDice', array(2))}}}" class="btn btn-lg btn-dark">2</a>
+                    <a href="{{{action('HomeController@showRollDice', array(3))}}}" class="btn btn-lg btn-light">3</a>
+                    <a href="{{{action('HomeController@showRollDice', array(4))}}}" class="btn btn-lg btn-dark">4</a>
+                    <a href="{{{action('HomeController@showRollDice', array(5))}}}" class="btn btn-lg btn-light">5</a>
+                    <a href="{{{action('HomeController@showRollDice', array(6))}}}" class="btn btn-lg btn-dark">6</a>
                 </div>
             </div>
         </div>

@@ -29,19 +29,19 @@
                 <a href="#" onclick="$(&quot;#menu-close&quot;).click();">Look Around</a>
             </li>
             <li>
-                <a href="/" onclick="$(&quot;#menu-close&quot;).click();">Home</a>
+                <a href="{{{action('HomeController@showHome')}}}" onclick="$(&quot;#menu-close&quot;).click();">Home</a>
             </li>
             <li>
-                <a href="/resume" onclick="$(&quot;#menu-close&quot;).click();">Resume</a>
+                <a href="{{{action('HomeController@showResume')}}}" onclick="$(&quot;#menu-close&quot;).click();">Resume</a>
             </li>
             <li>
-                <a href="/#services" onclick="$(&quot;#menu-close&quot;).click();">Languages</a>
+                <a href="{{{action('HomeController@showHome')}}}#services" onclick="$(&quot;#menu-close&quot;).click();">Languages</a>
             </li>
             <li>
-                <a href="/portfolio" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
+                <a href="{{{action('HomeController@showPortfolio')}}}" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
             </li>
             <li>
-                <a href="/#contact" onclick="$(&quot;#menu-close&quot;).click();">Contact</a>
+                <a href="{{{action('HomeController@showHome')}}}#contact" onclick="$(&quot;#menu-close&quot;).click();">Contact</a>
             </li>
         </ul>
     </nav>

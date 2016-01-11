@@ -11,32 +11,27 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home');
-});
+Route::get('/', 'HomeController@showHome');
 
-Route::get('/portfolio', function()
-{
-	return View::make('portfolio');
-});
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
-Route::get('/resume', function()
-{
-	return View::make('resume');
-});
+Route::get('/resume', 'HomeController@showResume');
 
-Route::get('/my-first-view/{name?}', function($name = null)
-{
-	$data = array('name' => $name);
-	return View::make('my-first-view')->with($data);
-});
+Route::get('/my-first-view/{name?}', 'HomeController@showMyFirstView');
 
-Route::get('/rolldice/{guess?}', function($guess = null)
+Route::get('/rolldice/{guess?}', 'HomeController@showRollDice');
+
+Route::resource('posts', 'PostsController');
+
+Route::get('orm-test', function ()
 {
-	$randnum = mt_rand(1,6);
-	$data = ['guess' => $guess,
-			 'randnum'=> $randnum	
-				];
-	return View::make('rolldice')->with($data);
+    $post1 = new Post();
+	$post1->title = 'Eloquent is awesome!';
+	$post1->content  = 'It is super easy to create a new post.';
+	$post1->save();
+
+	$post2 = new Post();
+	$post2->title = 'Post number two';
+	$post2->content  = 'The body for post number two.';
+	$post2->save();
 });
