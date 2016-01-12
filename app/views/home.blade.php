@@ -7,7 +7,7 @@
             <h1>Mary Kaitlin Warren</h1>
             <h3>Full Stack Web Developer</h3>
             <br>
-            <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a>
         </div>
     </header>
 
@@ -15,8 +15,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Stylish Developer who is the perfect team member for your next project!</h2>
-                    <p class="lead">This developer's homepage features some wonderful photography courtesy of <a target="_blank" href="http://http://gratisography.com/#nature">the Internet</a>.</p>
+                    <h2>“Get action. Do things; be sane; don’t fritter away your time; create, act, take a place wherever you are and be somebody; get action.”</h2>
+                    <p class="lead">Theodore Roosevelt</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -104,7 +104,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>My Work</h2>
-                    <hr class="small">
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+                    <a href="{{{action('HomeController@showPortfolio')}}}" class="btn btn-dark">View More Items</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>

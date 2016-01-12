@@ -1,11 +1,17 @@
 @extends('layouts.master')
 
 @section('top-script')
-<link href="/css/blog.css" rel="stylesheet">
+	<link href="/css/blog.css" rel="stylesheet">
+<style type="text/css">
+        .btn-lg {
+            font-size: 18px;
+            padding: 10px 16px;
+        }
+    </style>
 @stop
 
 @section('content')
-	<header class="intro-header" style="background-image: url('{{{$post->image}}}')">
+	<header class="intro-header" style="background-image: url('/img/170H.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

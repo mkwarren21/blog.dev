@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Laravel Blog</title>
+    <title>Full Stack Web Developer | MK Warren</title>
 
    	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
    	<link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -10,6 +10,12 @@
    	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
    	
    	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        a:focus {
+            outline: none;
+        }
+    </style>
 
 
    	@yield('top-script')
@@ -35,17 +41,42 @@
                 <a href="{{{action('HomeController@showResume')}}}" onclick="$(&quot;#menu-close&quot;).click();">Resume</a>
             </li>
             <li>
-                <a href="{{{action('HomeController@showHome')}}}#services" onclick="$(&quot;#menu-close&quot;).click();">Languages</a>
+                <a href="{{{action('PostsController@index')}}}" onclick="$(&quot;#menu-close&quot;).click();">Blog</a>
             </li>
             <li>
                 <a href="{{{action('HomeController@showPortfolio')}}}" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
             </li>
             <li>
-                <a href="{{{action('HomeController@showHome')}}}#contact" onclick="$(&quot;#menu-close&quot;).click();">Contact</a>
+                {{-- <div class=contactmebtn> --}}
+                    <a href="#" data-toggle="modal" data-target="#myModal">Contact Me</a>
+                {{-- </div> --}}
             </li>
         </ul>
     </nav>
+
+
     @yield('content')
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Contact Me</h4>
+          </div>
+          <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="E-mail">
+                <textarea class="form-control" rows="3" placeholder="Message..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 	<script src="/js/jquery-1.11.3.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
