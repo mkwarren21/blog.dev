@@ -28,6 +28,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <a href="{{{action('PostsController@edit', $post->id)}}}">Edit the Post!</a>
+                </div>
+                
+                {{ Form::model($post, array('action' => array('PostsController@destroy', $post->id),'method' => 'DELETE', 'class'=> 'col-lg-offset-2 col-md-offset-1')) }}
+                    {{Form::submit('Delete this Post', array('class' => 'btn btn-warning'))}}
+                {{ Form::close()}}
+
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>{{{$post->content}}}</p>
                 </div>
             </div>

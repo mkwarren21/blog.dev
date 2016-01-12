@@ -47,7 +47,8 @@ class PostsController extends \BaseController {
 			if($result) {
 				return Redirect::action('PostsController@index');
 			} else {
-				return Redirect::back()->withInput();
+				return "this didnt work";
+				// return Redirect::back()->withInput();
 			}
 		}
 
@@ -89,14 +90,14 @@ class PostsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update()
+	public function update($id)
 	{
 		$validator = Validator::make(Input::all(), Post::$rules);
 
 		if ($validator->fails()){
 			return Redirect::back()->withInput()->withErrors($validator);
 		} else{
-			$post = new Post();
+			$post = Post::find($id);
 			$post->title = Input::get('title');
 			$post->subtitle = Input::get('subtitle');
 			$post->content = Input::get('content');
@@ -106,7 +107,6 @@ class PostsController extends \BaseController {
 			if($result) {
 				return Redirect::action('PostsController@index');
 			} else {
-				echo "This failed";
 				return Redirect::back()->withInput();
 			}
 		}
@@ -121,8 +121,11 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$data = array('id' => $id);
-		return View::make('show')->with($data);
+
+		$post = Post::find($id);
+		$post->delete();
+
+		return Redirect::action('PostsController@index');
 	}
 
 

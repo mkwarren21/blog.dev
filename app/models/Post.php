@@ -6,8 +6,8 @@ class Post extends Eloquent
 
     public static $rules = array(
 		    'title'      => 'required|min:8|max:100',
-		    'subtitle'      => 'required|min:8|max:100',
-		    'body'       => 'required|max:10000'
+		    'subtitle'   => 'required|min:8|max:100',
+		    'content'       => 'required|max:10000'
 		);
 }
 
