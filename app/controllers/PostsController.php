@@ -61,6 +61,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		$post = new Post();
+        Log::info(Input::all());
 		return $this->validateAndSave($post);
 	}
 
@@ -74,8 +75,8 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
-    		if (!$post){
-            Session::flash('errorMessage', 'This post does not exist.');
+    	if (!$post){
+            App::abort(404);
 			return Redirect::action('PostsController@index');
 		} 
 

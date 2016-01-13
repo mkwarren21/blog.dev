@@ -1,6 +1,6 @@
 <?php
 
-class Post extends Eloquent
+class Post extends BaseModel
 {
     protected $table = 'posts';
 
@@ -9,6 +9,15 @@ class Post extends Eloquent
 		    'subtitle'   => 'required|min:8|max:100',
 		    'content'       => 'required|max:10000'
 		);
+
+    
+
+    public function setTitleAttribute($value)
+    {
+    	$this->attributes['title']= $value;
+    	//this is so you never have to assign your slug in the database
+    	$this->attributes['slug']= Str::slug($value);
+    }
 }
 
 ?>

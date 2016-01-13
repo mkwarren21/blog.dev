@@ -3,8 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RemoveDateColumnPostsTable extends Migration {
-
+class CreateSlugColumnPostsTable extends Migration {
 	/**
 	 * Run the migrations.
 	 *
@@ -12,7 +11,10 @@ class RemoveDateColumnPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::table('posts', function(Blueprint $table)
+		{
+			$table->string('slug', 200)->unique();;
+		});
 	}
 
 	/**
@@ -22,7 +24,10 @@ class RemoveDateColumnPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::table('posts', function(Blueprint $table)
+	 		{
+	 			$table->dropColumn('slug');
+	 		});
 	}
 
 }
