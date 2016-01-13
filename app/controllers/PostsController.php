@@ -24,6 +24,35 @@ class PostsController extends \BaseController {
 		return View::make('posts.create');
 	}
 
+	/**
+	 * Validate inputs and save to database.
+	 *
+	 * @return Response
+	 */
+
+	protected function validateAndSave($post)
+	{
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		if ($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+		} else{
+			$post->title = Input::get('title');
+			$post->subtitle = Input::get('subtitle');
+			$post->content = Input::get('content');
+			$post->image = '/img/264H.jpg';
+			$post->date = date('Y-m-d');
+			//need to delete date column
+			$result = $post->save();
+			if($result) {
+				return Redirect::action('PostsController@show', $post->id);
+			} else {
+				return "this didnt work";
+				// return Redirect::back()->withInput();
+			}
+		}		
+	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -32,28 +61,8 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make(Input::all(), Post::$rules);
-
-		if ($validator->fails()){
-			return Redirect::back()->withInput()->withErrors($validator);
-		} else{
-			$post = new Post();
-			$post->title = Input::get('title');
-			$post->subtitle = Input::get('subtitle');
-			$post->content = Input::get('content');
-			$post->image = '/img/264H.jpg';
-			$post->date = date('Y-m-d');
-			$result = $post->save();
-			if($result) {
-				return Redirect::action('PostsController@index');
-			} else {
-				return "this didnt work";
-				// return Redirect::back()->withInput();
-			}
-		}
-
-		
-
+		$post = new Post();
+		$this->validateAndSave($post);
 		// return Redirect::back()->withInput();
 	}
 
@@ -92,24 +101,8 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$validator = Validator::make(Input::all(), Post::$rules);
-
-		if ($validator->fails()){
-			return Redirect::back()->withInput()->withErrors($validator);
-		} else{
-			$post = Post::find($id);
-			$post->title = Input::get('title');
-			$post->subtitle = Input::get('subtitle');
-			$post->content = Input::get('content');
-			$post->image = '/img/264H.jpg';
-			$post->date = date('Y-m-d');
-			$result = $post->save();
-			if($result) {
-				return Redirect::action('PostsController@index');
-			} else {
-				return Redirect::back()->withInput();
-			}
-		}
+		$post = Post::find($id);
+		$this->validateAndSave($post);
 	}
 
 

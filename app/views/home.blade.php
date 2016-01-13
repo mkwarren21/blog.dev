@@ -153,13 +153,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>Play Roll Dice. Pick a number!</h3>
-                    <a href="{{{action('HomeController@showRollDice', array(1))}}}" class="btn btn-lg btn-light">1</a>
-                    <a href="{{{action('HomeController@showRollDice', array(2))}}}" class="btn btn-lg btn-dark">2</a>
-                    <a href="{{{action('HomeController@showRollDice', array(3))}}}" class="btn btn-lg btn-light">3</a>
-                    <a href="{{{action('HomeController@showRollDice', array(4))}}}" class="btn btn-lg btn-dark">4</a>
-                    <a href="{{{action('HomeController@showRollDice', array(5))}}}" class="btn btn-lg btn-light">5</a>
-                    <a href="{{{action('HomeController@showRollDice', array(6))}}}" class="btn btn-lg btn-dark">6</a>
+                    <h3>"We have a choice to use the gift of our lives to make the world a better place."</h3>
+                    <h1 class = "lead">- Dr. Jane Goodall</h1>
                 </div>
             </div>
         </div>
