@@ -41,14 +41,13 @@ class PostsController extends \BaseController {
 			$post->subtitle = Input::get('subtitle');
 			$post->content = Input::get('content');
 			$post->image = '/img/264H.jpg';
-			$post->date = date('Y-m-d');
-			//need to delete date column
 			$result = $post->save();
 			if($result) {
+                Session::flash('successMessage', 'Great Success!');
 				return Redirect::action('PostsController@show', $post->id);
 			} else {
-				return "this didnt work";
-				// return Redirect::back()->withInput();
+                Session::flash('errorMessage', 'Post was not saved.');
+				return Redirect::back()->withInput();
 			}
 		}		
 	}
@@ -62,8 +61,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		$post = new Post();
-		$this->validateAndSave($post);
-		// return Redirect::back()->withInput();
+		return $this->validateAndSave($post);
 	}
 
 
@@ -76,6 +74,11 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+    		if (!$post){
+            Session::flash('errorMessage', 'This post does not exist.');
+			return Redirect::action('PostsController@index');
+		} 
+
 		return View::make('posts.show')->with('post', $post);
 	}
 
@@ -102,7 +105,7 @@ class PostsController extends \BaseController {
 	public function update($id)
 	{
 		$post = Post::find($id);
-		$this->validateAndSave($post);
+		return $this->validateAndSave($post);
 	}
 
 

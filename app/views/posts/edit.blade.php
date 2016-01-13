@@ -8,7 +8,7 @@
 {{ Form::close()}}
 
 {{ Form::model($post, array('action' => array('PostsController@destroy', $post->id),'method' => 'DELETE')) }}
-                {{Form::submit('Delete this Post', array('class' => 'btn btn-warning'))}}
-                {{ Form::close()}}
+	{{Form::submit('Delete this Post', array('class' => 'btn btn-warning'))}}
+{{ Form::close()}}
 
 @stop

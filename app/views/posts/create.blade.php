@@ -5,7 +5,7 @@
 
 {{ Form::open(array('action'=>'PostsController@store')) }}
 
-		@include('posts.create-edit-form-template');
+		@include('posts.create-edit-form-template')
 
 {{ Form::close() }}
 

@@ -43,7 +43,7 @@
 		                            {{{$post->subtitle}}}
 		                        </h3>
 		                    </a>
-		                    <p class="post-meta">Posted by <a href="#">Foreign Key UserName</a> on {{{$post->date}}}</p>
+		                    <p class="post-meta">Posted by <a href="#">Foreign Key UserName</a> on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y')}}}</p>
 		                </div>
 		                <hr>
 	                @endforeach

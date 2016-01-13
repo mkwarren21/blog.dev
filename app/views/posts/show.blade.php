@@ -18,7 +18,7 @@
                     <div class="post-heading">
                         <h1>{{{$post->title}}}</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta">Posted by <a href="#">Foreign Key UserName</a> on {{{$post->date}}}</span>
+                        <span class="meta">Posted by <a href="#">Foreign Key UserName</a> on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</span>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,13 @@
 
     @include('partials.navbar')
 
-
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+    
     @yield('content')
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,6 +56,7 @@
         </div>
       </div>
     </div>
+
 
 
 	<script src="/js/jquery-1.11.3.min.js"></script>
