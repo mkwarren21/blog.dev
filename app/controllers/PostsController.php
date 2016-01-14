@@ -72,9 +72,9 @@ class PostsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		$post = Post::find($id);
+		$post = Post::where('slug',$slug)->first();
     	if (!$post){
             App::abort(404);
 			return Redirect::action('PostsController@index');
@@ -90,9 +90,9 @@ class PostsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-		$post = Post::find($id);	
+		$post = Post::where('slug',$slug)->first();
 		return View::make('posts.edit')->with('post', $post);
 	}
 

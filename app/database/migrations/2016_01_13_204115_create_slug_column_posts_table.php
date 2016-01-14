@@ -13,7 +13,7 @@ class CreateSlugColumnPostsTable extends Migration {
 	{
 		Schema::table('posts', function(Blueprint $table)
 		{
-			$table->string('slug', 200)->unique();;
+			$table->string('slug', 200)->unique();
 		});
 	}
 
