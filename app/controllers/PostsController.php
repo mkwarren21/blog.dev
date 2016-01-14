@@ -2,6 +2,13 @@
 
 class PostsController extends \BaseController {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,8 +16,13 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(4);
-		return View::make('posts.index')->with('posts', $posts);
+		$posts = (Post::with('user')->orderBy('created_at', 'desc')->paginate(4));
+
+		if (Request::wantsJson()){
+			return Response::json(['posts'=>$posts]);
+		} else{
+			return View::make('posts.index')->with('posts', $posts);
+		}
 	}
 
 
@@ -40,11 +52,12 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->subtitle = Input::get('subtitle');
 			$post->content = Input::get('content');
+			$post->user_id = Auth::id();
 			$post->image = '/img/264H.jpg';
 			$result = $post->save();
 			if($result) {
                 Session::flash('successMessage', 'Great Success!');
-				return Redirect::action('PostsController@show', $post->id);
+				return Redirect::action('PostsController@show', $post->slug);
 			} else {
                 Session::flash('errorMessage', 'Post was not saved.');
 				return Redirect::back()->withInput();
@@ -123,6 +136,11 @@ class PostsController extends \BaseController {
 		$post->delete();
 
 		return Redirect::action('PostsController@index');
+	}
+
+	public function getManage()
+	{
+		return View::make('posts.manage');
 	}
 
 

@@ -17,6 +17,18 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/resume', 'HomeController@showResume');
 
+Route::get('login', 'HomeController@getLogin');
+//if you are going to have a more complicated login, make a separate Auth controller
+
+Route::post('login', 'HomeController@postLogin');
+
+Route::get('logout', 'HomeController@getLogout');
+
+Route::get('posts/manage', 'PostsController@getManage');
+
+
 Route::resource('posts', 'PostsController');
+
+
 
 

@@ -27,9 +27,11 @@
 	
 		<div class="container">
 			<div class="row">
+				@if (Auth::check())
 	            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	            	<a href="{{{action('PostsController@create')}}}">Create a Post!</a>
 	            </div>
+	            @endif
 			</div>
 	        <div class="row">
 	            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -43,7 +45,7 @@
 		                            {{{$post->subtitle}}}
 		                        </h3>
 		                    </a>
-		                    <p class="post-meta">Posted by <a href="#">Foreign Key UserName</a> on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y')}}}</p>
+		                    <p class="post-meta">Posted by <a href="#">{{{$post->user->username}}}</a> on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y')}}}</p>
 		                </div>
 		                <hr>
 	                @endforeach

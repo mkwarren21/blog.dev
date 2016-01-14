@@ -13,10 +13,10 @@ class AddUserIdToPosts extends Migration {
 	public function up()
 	{
 		Schema::table('posts', function($table)
-			{
-			    $table->integer('user_id')->unsigned();
-			    $table->foreign('user_id')->references('id')->on('users');
-			});
+		{
+		    $table->integer('user_id')->unsigned();
+		    $table->foreign('user_id')->references('id')->on('users');
+		});
 	}
 
 	/**
@@ -27,10 +27,10 @@ class AddUserIdToPosts extends Migration {
 	public function down()
 	{
 		Schema::table('posts', function($table)
-			{
-			    $table->dropForeign('posts_user_id_foreign');
-			    $table->dropColumn('user_id');
-			});
+		{
+		    $table->dropForeign('posts_user_id_foreign');
+		    $table->dropColumn('user_id');
+		});
 	}
 
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <meta name="csrf-token" content="{{{ csrf_token() }}}">
     <title>Full Stack Web Developer | MK Warren</title>
 
    	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">

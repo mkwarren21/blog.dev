@@ -4,7 +4,11 @@
                 <i class="fa fa-times"></i>
             </a>
             <li class="sidebar-brand">
-                <a href="#" onclick="$(&quot;#menu-close&quot;).click();">Look Around</a>
+                @if (Auth::check()) 
+                    <a href="{{{action('HomeController@getLogout')}}}" onclick="$(&quot;#menu-close&quot;).click();">Log Out</a>
+                @else
+                    <a href="{{{action('HomeController@getLogin')}}}" onclick="$(&quot;#menu-close&quot;).click();">Log In</a>
+                @endif
             </li>
             <li>
                 <a href="{{{action('HomeController@showHome')}}}" onclick="$(&quot;#menu-close&quot;).click();">Home</a>
