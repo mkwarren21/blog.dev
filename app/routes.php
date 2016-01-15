@@ -29,6 +29,8 @@ Route::get('posts/manage', 'PostsController@getManage');
 
 Route::resource('posts', 'PostsController');
 
+Route::resource('tags', 'TagsController');
+
 
 
 

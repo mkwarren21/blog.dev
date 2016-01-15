@@ -23,7 +23,8 @@
 
         $http.get("/posts").then(function(response){
             $log.info("Ajax request successful!");
-            $log.debug(response);
+            $scope.posts = response.data.posts;
+            $log.info(response);
         }, function(response){
             $log.error("Ajax request failed.");
             $log.debug(response);

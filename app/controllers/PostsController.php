@@ -24,13 +24,15 @@ class PostsController extends \BaseController {
 			$query->where('title', 'like', "%{$search}%")->orWhere('content', 'like', "%{$search}%");
 		}
 
-		$posts=$query->orderBy('created_at', 'desc')->paginate(4);
+		$query->orderBy('created_at', 'desc');
 
 
 
 		if (Request::wantsJson()){
+			$posts = $query->get();
 			return Response::json(['posts'=>$posts]);
 		} else{
+			$posts = $query->paginate(4);
 			return View::make('posts.index')->with('posts', $posts);
 		}
 	}
@@ -57,6 +59,7 @@ class PostsController extends \BaseController {
 		$validator = Validator::make(Input::all(), Post::$rules);
 
 		if ($validator->fails()){
+			Session::flash('errorMessage', 'Validation failed');
 			return Redirect::back()->withInput()->withErrors($validator);
 		} else{
 			$post->title = Input::get('title');
