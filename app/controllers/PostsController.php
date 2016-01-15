@@ -16,7 +16,17 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = (Post::with('user')->orderBy('created_at', 'desc')->paginate(4));
+		$query = Post::with('user');
+		
+
+		if (Input::has('search')){
+			$search = Input::get('search');
+			$query->where('title', 'like', "%{$search}%")->orWhere('content', 'like', "%{$search}%");
+		}
+
+		$posts=$query->orderBy('created_at', 'desc')->paginate(4);
+
+
 
 		if (Request::wantsJson()){
 			return Response::json(['posts'=>$posts]);

@@ -28,5 +28,12 @@
                     <a href="#" data-toggle="modal" data-target="#myModal">Contact Me</a>
                 {{-- </div> --}}
             </li>
+             <li>
+                <form action = "{{{action('PostsController@index')}}}">
+                    {{Form::text('search', null, ['placeholder'=>'Search blog'])}}
+                    {{Form::submit('Submit')}}
+                </form>
+            </li>
+
         </ul>
     </nav>
