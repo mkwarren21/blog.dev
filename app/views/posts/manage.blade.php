@@ -2,15 +2,19 @@
 
 @section('bottom-script')
 
+	<script src="/js/moment.js"></script>
+	<script src="/js/moment-timezone.js"></script>
 	<script src="/js/angular.min.js"></script>
+
 	<script src="/js/postsModule.js"></script>
+
 
 @stop
 
 @section('content')
 
 	<section ng-app="postModule">
-		<table ng-controller="ManagePostsController">
+		<table class = "table-striped" ng-controller="ManagePostsController">
 			<tr>
 				<th>Blog Title</th>
 				<th>Sub-Title</th>
@@ -24,8 +28,8 @@
 				<td>@{{post.title}}</td>
 				<td>@{{post.subtitle}}</td>
 				<td>@{{post.content}}</td>
-				<td>@{{post.created_at}}</td>
-				<td>@{{post.updated_at}}</td>
+				<td>@{{post.created_at |phpDate}}</td>
+				<td>@{{post.updated_at |phpDate}}</td>
 				<td>Delete</td>
 				<td>Edit</td>
 			</tr>
