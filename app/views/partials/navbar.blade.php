@@ -21,7 +21,7 @@
                 <a href="{{{action('PostsController@index')}}}" onclick="$(&quot;#menu-close&quot;).click();">Blog</a>
             </li>
             <li>
-                <a href="{{{action('HomeController@showPortfolio')}}}" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
+                <a href="{{{action('HomeController@showHome')}}}#portfolio" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
             </li>
             <li>
                 {{-- <div class=contactmebtn> --}}

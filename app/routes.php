@@ -26,6 +26,9 @@ Route::get('logout', 'HomeController@getLogout');
 
 Route::get('posts/manage', 'PostsController@getManage');
 
+Route::get('simplesimon', 'HomeController@showSimpleSimon');
+
+Route::get('whackamole', 'HomeController@showWhackamole');
 
 Route::resource('posts', 'PostsController');
 

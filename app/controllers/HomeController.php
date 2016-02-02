@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
-		return View::make('home');
+		return View::make('test');
 	}
 
 	public function showPortfolio()
@@ -65,5 +65,14 @@ class HomeController extends BaseController {
 		return Redirect::action('HomeController@showHome');
 	}
 
+	public function showSimpleSimon()
+	{
+		return View::make('simplesimon');
+	}
+
+	public function showWhackamole()
+	{
+		return View::make('whackamole');
+	}
 
 }

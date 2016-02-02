@@ -40,7 +40,7 @@
                                 <h4>
                                     <strong>HTML5</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p></p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 <h4>
                                     <strong>CSS</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p></p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                 <h4>
                                     <strong>JavaScript</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p></p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <h4>
                                     <strong>PHP</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p></p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -93,12 +93,6 @@
         <!-- /.container -->
     </section>
 
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
-        </div>
-    </aside>
-
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
@@ -108,18 +102,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="../simplesimon.dev">
-                                    <img class="img-portfolio img-responsive" src="/img/reverseflash.png">
+                                <a href="http://greasemonkey.rocks">
+                                    <img class="img-portfolio img-responsive" src="/img/greasemonkey.png">
                                 </a>
-                                <p>A Javascript game built on the jQuery library.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="../adlister.dev">
-                                    <img class="img-portfolio img-responsive" src="/img/adlister.png">
-                                </a>
-                                <p>A PHP based application with a MySQL database.</p>
+                                <p>A web resource for DIY automechanics using the Laravel framework and a mySql database.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -132,7 +118,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="../simplesimon.dev">
+                                <a href="{{{action('HomeController@showWhackamole')}}}">
+                                    <img class="img-portfolio img-responsive" src="/img/reverseflash.png">
+                                </a>
+                                <p>A Javascript game built on the jQuery library.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="{{{action('HomeController@showSimpleSimon')}}}">
                                     <img class="img-portfolio img-responsive" src="/img/simplesimon.png">
                                 </a>
                                 <p>A Javascript game that uses a continuous callback function.</p>
@@ -160,41 +154,31 @@
         </div>
     </aside>
 
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Codeup.,+Houston+Street,+San+Antonio,+TX&amp;aq=0&amp;oq=twitter&amp;sll=29.4267857,-98.4917651&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Codeup.,+Houston+Street,+San+Antonio,+TX&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br>
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Codeup.,+Houston+Street,+San+Antonio,+TX&amp;aq=0&amp;oq=twitter&amp;sll=29.4267857,-98.4917651&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Codeup.,+Houston+Street,+San+Antonio,+TX&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        
-    </section>
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Mary Kaitlin Warren</strong>
                     </h4>
-                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:mkwarren21@gmail.com">mkwarren21@gmail.com</a>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a href="https://github.com/mkwarren21"><i class="fa fa-github fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="https://twitter.com/MaryKaitW"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="http://codepen.io/mkwarren21/"><i class="fa fa-codepen fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright © Your Website 2014</p>
+                    <p class="text-muted">Copyright © Mary Kaitlin Warren 2016</p>
                 </div>
             </div>
         </div>
