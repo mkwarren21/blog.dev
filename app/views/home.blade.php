@@ -7,7 +7,7 @@
             <h1>Mary Kaitlin Warren</h1>
             <h3>Full Stack Web Developer</h3>
             <br>
-            <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a>
+           {{--  <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a> --}}
         </div>
     </header>
 
@@ -41,7 +41,7 @@
                                     <strong>HTML5</strong>
                                 </h4>
                                 <p></p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -54,7 +54,7 @@
                                     <strong>CSS</strong>
                                 </h4>
                                 <p></p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -67,7 +67,7 @@
                                     <strong>JavaScript</strong>
                                 </h4>
                                 <p></p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -80,7 +80,7 @@
                                     <strong>PHP</strong>
                                 </h4>
                                 <p></p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
     </aside>
 
 
-    <footer>
+    <footer id = "footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">

@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
-		return View::make('test');
+		return View::make('home');
 	}
 
 	public function showPortfolio()
@@ -75,4 +75,22 @@ class HomeController extends BaseController {
 		return View::make('whackamole');
 	}
 
+	protected function sendNotificationEmail($comment)
+	{
+
+		if (isset($comment->qa_id)){
+			$user = $comment->qa->user;
+		} else {
+			$user = $comment->tutorial->user;
+		}
+
+		$text = "Someone responded to your post!";
+
+		return Mail::send('emails.notification', ['user' => $user], function ($m) use ($user) {
+            $m->from('postmaster@sandbox8db08a1a17a44e4b83110e3242bbf4ca.mailgun.org', 'Your Application');
+
+            $m->to($user->email)->subject('Notification from GreaseMonkey!');
+        });
+	
+	}
 }

@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	</div>
-	</div>
+</div>
 
 	<div id = "lost">Not this time.</div>
 	<div id = "star_labs"></div>
