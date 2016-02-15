@@ -17,7 +17,7 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/resume', 'HomeController@showResume');
 
-Route::get('login', 'HomeController@getLogin');
+Route::get('/soggybottombrothers', 'HomeController@getLogin');
 //if you are going to have a more complicated login, make a separate Auth controller
 
 Route::post('login', 'HomeController@postLogin');
