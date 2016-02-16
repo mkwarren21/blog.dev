@@ -2,6 +2,10 @@
 
 
 @section('content')
+    <div class="page-header">
+        <h1>Along came 'MK' AS 'Alice'</h1>
+          <h3>A Trip Through the Wonderland of Development</h3>
+      </div>
 
 
     @foreach ($posts as $post)
@@ -22,7 +26,16 @@
         <hr>
     @endforeach
 
-               
+     <!-- Pager -->
+    {{ $posts->links() }}
+    <ul class="pager">
+        <li class="previous">
+            <a href="#">← Older</a>
+        </li>
+        <li class="next">
+            <a href="#">Newer →</a>
+        </li>
+    </ul>
 
        
 	

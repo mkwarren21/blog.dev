@@ -106,7 +106,7 @@ class PostsController extends \BaseController {
 	public function show($slug)
 	{
 		$converter = new CommonMarkConverter();
-		$post = post::find($slug);
+		$post = Post::where('slug',$slug)->first();
 		if(!$post) {
 			App::abort(404);
 		}
