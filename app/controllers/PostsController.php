@@ -1,5 +1,7 @@
 <?php
 
+use League\CommonMark\CommonMarkConverter;
+
 class PostsController extends \BaseController {
 
 	public function __construct()
@@ -45,7 +47,10 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		$converter = new CommonMarkConverter();
+		$tags = Tag::with('posts')->get();
+		// return View::make('posts.create');
+		return View::make('posts.create', compact('tags', 'converter'));
 	}
 
 	/**
@@ -100,13 +105,14 @@ class PostsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$post = Post::where('slug',$slug)->first();
-    	if (!$post){
-            App::abort(404);
-			return Redirect::action('PostsController@index');
-		} 
+		$converter = new CommonMarkConverter();
+		$post = post::find($slug);
+		if(!$post) {
+			App::abort(404);
+		}
 
-		return View::make('posts.show')->with('post', $post);
+		// return View::make('posts.show')->with('post', $post);
+		return View::make('posts.show', compact('post', 'converter'));
 	}
 
 

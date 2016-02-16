@@ -40,7 +40,6 @@ class TagsController extends \BaseController {
 
 		Tag::create($data);
 
-		return Redirect::route('tags.index');
 	}
 
 	/**
@@ -53,7 +52,6 @@ class TagsController extends \BaseController {
 	{
 		$tag = Tag::findOrFail($id);
 
-		return View::make('tags.show', compact('tag'));
 	}
 
 	/**
@@ -66,7 +64,6 @@ class TagsController extends \BaseController {
 	{
 		$tag = Tag::find($id);
 
-		return View::make('tags.edit', compact('tag'));
 	}
 
 	/**
@@ -88,7 +85,6 @@ class TagsController extends \BaseController {
 
 		$tag->update($data);
 
-		return Redirect::route('tags.index');
 	}
 
 	/**
@@ -101,7 +97,6 @@ class TagsController extends \BaseController {
 	{
 		Tag::destroy($id);
 
-		return Redirect::route('tags.index');
 	}
 
 }

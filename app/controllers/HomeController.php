@@ -75,22 +75,23 @@ class HomeController extends BaseController {
 		return View::make('whackamole');
 	}
 
-	protected function sendNotificationEmail($comment)
+	public function search()
 	{
+		$search = Input::get('search');
 
-		if (isset($comment->qa_id)){
-			$user = $comment->qa->user;
-		} else {
-			$user = $comment->tutorial->user;
-		}
+	    $searchTerms = explode(' ', $search);
 
-		$text = "Someone responded to your post!";
+	    $queryPost = Post::with('user');
 
-		return Mail::send('emails.notification', ['user' => $user], function ($m) use ($user) {
-            $m->from('postmaster@sandbox8db08a1a17a44e4b83110e3242bbf4ca.mailgun.org', 'Your Application');
+	    foreach($searchTerms as $term)
+	    {
+	        $queryPost->where('title', 'LIKE', '%'. $term .'%')
+	        ->orWhere('content', 'LIKE', '%' . $term . '%');
 
-            $m->to($user->email)->subject('Notification from GreaseMonkey!');
-        });
-	
+	    }
+
+	    $posts = $queryPost->orderBy('created_at', 'desc')->get();
+
+	    return View::make('search', compact('posts'));
 	}
 }
