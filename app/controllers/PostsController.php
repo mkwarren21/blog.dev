@@ -19,7 +19,7 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$query = Post::with('user');
-		
+		$tags = Tag::with('posts')->paginate(8);
 
 		if (Input::has('search')){
 			$search = Input::get('search');
@@ -32,10 +32,10 @@ class PostsController extends \BaseController {
 
 		if (Request::wantsJson()){
 			$posts = $query->get();
-			return Response::json(['posts'=>$posts]);
+			return Response::json(['posts'=>$posts, 'tags'=>$tags]);
 		} else{
 			$posts = $query->paginate(4);
-			return View::make('posts.index')->with('posts', $posts);
+			return View::make('posts.index', compact('posts', 'tags'));
 		}
 	}
 

@@ -5,6 +5,7 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Mary Kaitlin Warren</h1>
+            <hr class = "horizontalrule">
             <h3>Full Stack Web Developer</h3>
             <br>
            {{--  <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a> --}}
@@ -98,7 +99,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>My Work</h2>
-                    
+                    <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
@@ -134,7 +135,7 @@
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="{{{action('HomeController@showPortfolio')}}}" class="btn btn-dark">View More Items</a>
+                    {{-- <a href="{{{action('HomeController@showPortfolio')}}}" class="btn btn-dark">View More Items</a> --}}
                 </div>
                 <!-- /.col-lg-10 -->
             </div>

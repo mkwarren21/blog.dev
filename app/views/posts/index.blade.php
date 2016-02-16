@@ -35,8 +35,21 @@
         <li class="next">
             <a href="#">Newer →</a>
         </li>
-    </ul>
-
-       
+    </ul> 
 	
+@stop
+
+@section('categories')
+    <div class="well">
+        <h4>Blog Categories</h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    @foreach($tags as $tag)
+                        <li><a href="{{{action('HomeController@tags', $tag->id)}}}">{{{$tag->name}}}</a>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 @stop

@@ -91,7 +91,21 @@ class HomeController extends BaseController {
 	    }
 
 	    $posts = $queryPost->orderBy('created_at', 'desc')->get();
+		$tags = Tag::with('posts')->paginate(8);
 
-	    return View::make('search', compact('posts'));
+
+	    return View::make('search', compact('posts', 'tags'));
+	}
+
+	public function tags($id)
+	{
+	    $tag = Tag::find($id);
+
+  		$posts = $tag->posts()->get();
+		$tags = Tag::with('posts')->paginate(8);
+  		
+
+	    return View::make('search', compact('posts', 'tags'));
+
 	}
 }

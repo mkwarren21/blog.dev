@@ -23,10 +23,6 @@
 </head>
 <body>
 
-	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
-		<i class="fa fa-bars"></i>
-	</a>
-
     @include('partials.navbar')
 
     @if (Session::has('successMessage'))

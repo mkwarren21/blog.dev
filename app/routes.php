@@ -32,6 +32,8 @@ Route::get('whackamole', 'HomeController@showWhackamole');
 
 Route::get('/search', 'HomeController@search');
 
+Route::get('/search/{tag}', 'HomeController@tags');
+
 Route::resource('posts', 'PostsController');
 
 Route::resource('tags', 'TagsController');
