@@ -1,40 +1,53 @@
-	<nav id="sidebar-wrapper" class="">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-                <i class="fa fa-times"></i>
-            </a>
-           {{--  <li class="sidebar-brand">
-                @if (Auth::check()) 
-                    <a href="{{{action('HomeController@getLogout')}}}" onclick="$(&quot;#menu-close&quot;).click();">Log Out</a>
-                @else
-                    <a href="{{{action('HomeController@getLogin')}}}" onclick="$(&quot;#menu-close&quot;).click();">Log In</a>
-                @endif
-            </li> --}}
-            <li>
-                <a href="{{{action('HomeController@showHome')}}}" onclick="$(&quot;#menu-close&quot;).click();">Home</a>
-            </li>
-           {{--  <li>
-                <a href="{{{action('HomeController@showResume')}}}" onclick="$(&quot;#menu-close&quot;).click();">Resume</a> --}}
-                {{-- URL::asset('assets/pdf/file.pdf'); --}}
-            {{-- </li>
-            <li>
-                <a href="{{{action('PostsController@index')}}}" onclick="$(&quot;#menu-close&quot;).click();">Blog</a>
-            </li> --}}
-            <li>
-                <a href="{{{action('HomeController@showHome')}}}#portfolio" onclick="$(&quot;#menu-close&quot;).click();">Portfolio</a>
-            </li>
-            <li>
-                <a href="{{{action('HomeController@showHome')}}}#footer" onclick="$(&quot;#menu-close&quot;).click();">Contact Me</a>
-                {{-- <div class=contactmebtn>
-                    {{-- <a href="#" data-toggle="modal" data-target="#myModal">Contact Me</a> --}}
-                {{-- </div> --}}
-            </li> --}}
-             {{-- <li>
-                <form action = "{{{action('PostsController@index')}}}">
-                    {{Form::text('search', null, ['placeholder'=>'Search blog'])}}
-                    {{Form::submit('Submit')}}
-                </form>
-            </li> --}}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-        </ul>
-    </nav>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -14,7 +14,7 @@
             <a href="{{{action('PostsController@show', $post->slug)}}}">{{{$post->title}}}</a>
         </h2>
         <p class="lead">
-            by <a href="index.php">{{{$post->user->username}}}</a>
+            by <a href="#">{{{$post->user->username}}}</a>
         </p>
         <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
         <hr>
