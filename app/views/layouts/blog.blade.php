@@ -75,8 +75,8 @@
 
                 <!-- Side Widget Well -->
                 <div class="well">
-                    <h4>Full Disclaimer</h4>
-                    <p>I'm a newly minted full stack developer from Texas. Five year plan: become Tony Stark.</p>
+                    <h4>About Me</h4>
+                    <p>I'm a newly minted full stack developer from Texas. Six week plan: Play with new Arduino and the command line. Five year plan: become Tony Stark.</p>
                 </div>
 
             </div>

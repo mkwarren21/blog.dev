@@ -17,7 +17,7 @@
         </p>
         <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
         <hr>
-        <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+        <img class="img-responsive" src="{{{$post->image}}}" alt="">
         <hr>
         <p>{{{$post->content}}}</p>
         <a class="btn btn-primary" href="{{{action('PostsController@show', $post->slug)}}}">Read More <i class="fa fa-chevron-right"></i></a>

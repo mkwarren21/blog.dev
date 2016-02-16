@@ -76,8 +76,16 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->content = Input::get('content');
 			$post->user_id = Auth::id();
-			$post->image = '/img/264H.jpg';
+
+			$image = Input::file('image');
+			if ($image) {
+				$filename = $image->getClientOriginalName();
+				$post->image = '/uploaded/' . $filename;
+				$image->move('uploaded/', $filename);
+			}
+
 			$result = $post->save();
+			
 			if($result) {
                 Session::flash('successMessage', 'Great Success!');
 				return Redirect::action('PostsController@show', $post->slug);

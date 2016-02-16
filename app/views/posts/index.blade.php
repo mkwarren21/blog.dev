@@ -19,7 +19,7 @@
         </p>
         <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
         <hr>
-        <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+        <img class="img-responsive blog-image" src="{{{$post->image}}}" alt="blog-image">
         <hr>
         <p>{{$parsedown->text($post->content)}}</p>
         {{-- <p>{{$converter->convertToHtml($post->content)}}</p> --}}
