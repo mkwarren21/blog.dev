@@ -17,7 +17,7 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/resume', 'HomeController@showResume');
 
-Route::get('/soggybottombrothers', 'HomeController@getLogin');
+Route::get('/login', 'HomeController@getLogin');
 //if you are going to have a more complicated login, make a separate Auth controller
 
 Route::post('login', 'HomeController@postLogin');
@@ -29,6 +29,8 @@ Route::get('posts/manage', 'PostsController@getManage');
 Route::get('simplesimon', 'HomeController@showSimpleSimon');
 
 Route::get('whackamole', 'HomeController@showWhackamole');
+
+Route::get('/search', 'HomeController@search');
 
 Route::resource('posts', 'PostsController');
 
