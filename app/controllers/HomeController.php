@@ -27,16 +27,13 @@ class HomeController extends BaseController {
 
 	public function showResume()
 	{
-		// $file = '/img/resume.pdf'; 
-        
-		
-		// if (File::exists($file)) {
+		$filename = 'img/resume.pdf';
+		$path = storage_path().DIRECTORY_SEPARATOR.$filename;
 
-		//     $content = file_get_contents($file);
-		//     return Response::make($content, 200, array('content-type'=>'application/pdf'));
-		// } else{
-		// 	return "failure";
-		// }
+		return Response::make(file_get_contents($path), 200, [
+		    'Content-Type' => 'application/pdf',
+		    'Content-Disposition' => 'inline; '.$filename,
+		]);
 	}
 
 	public function getLogin()
@@ -103,7 +100,7 @@ class HomeController extends BaseController {
 
   		$posts = $tag->posts()->get();
 		$tags = Tag::with('posts')->paginate(8);
-  		
+
 
 	    return View::make('search', compact('posts', 'tags'));
 
