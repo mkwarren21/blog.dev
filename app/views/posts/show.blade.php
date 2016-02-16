@@ -1,48 +1,114 @@
-@extends('layouts.master')
-
-@section('top-script')
-	<link href="/css/blog.css" rel="stylesheet">
-<style type="text/css">
-        .btn-lg {
-            font-size: 18px;
-            padding: 10px 16px;
-        }
-    </style>
-@stop
+@extends('layouts.blog')
 
 @section('content')
-	<header class="intro-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>{{{$post->title}}}</h1>
-                        <h2 class="subheading">{{{$post->subtitle}}}</h2>
-                        <span class="meta">Posted by <a href="#">{{{$post->user()->first()->username}}}</a> on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <article>
-        <div class="container">
-            <div class="row">
-                @if (Auth::check())
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <a href="{{{action('PostsController@edit', $post->slug)}}}">Edit the Post!</a>
-                </div>
-                
-                {{ Form::model($post, array('action' => array('PostsController@destroy', $post->id),'method' => 'DELETE', 'class'=> 'col-lg-offset-2 col-md-offset-1')) }}
-                    {{Form::submit('Delete this Post', array('class' => 'btn btn-warning'))}}
-                {{ Form::close()}}
-                @endif
 
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>{{{$post->content}}}</p>
-                </div>
+
+<div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>{{{$post->title}}}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{{$post->user->username}}}</a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
+                <hr>
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">{{{$post->content}}}</p>
+                <hr>
+
+                <!-- Blog Comments -->
+
+             
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                
+
             </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div>
+
         </div>
-    </article>
+       
+        <hr>
+
+     
+
+    </div>
 @stop
 
 

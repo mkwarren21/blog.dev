@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.post')
 
 @section('content')
 {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
