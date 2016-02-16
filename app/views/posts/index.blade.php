@@ -21,7 +21,8 @@
         <hr>
         <img class="img-responsive" src="http://placehold.it/900x300" alt="">
         <hr>
-        <p>{{$converter->convertToHtml($post->content)}}</p>
+        <p>{{$parsedown->text($post->content)}}</p>
+        {{-- <p>{{$converter->convertToHtml($post->content)}}</p> --}}
         <a class="btn btn-primary" href="{{{action('PostsController@show', $post->slug)}}}">Read More <i class="fa fa-chevron-right"></i></a>
         </div>
         <hr>

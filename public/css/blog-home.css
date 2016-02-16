@@ -9,3 +9,31 @@ footer {
 .post{
 	background-color: rgba(221, 221, 221, 0.7);
 }
+
+a{
+	color: #F28D8D;
+}
+
+a:hover{
+	color: #99D1D1;
+	text-decoration: none;
+}
+
+.btn-primary{
+	background-color:#F28D8D;
+	border: #F28D8D;
+}
+
+.btn-primary:hover{
+	background-color: #99D1D1;
+	border: #99D1D1;
+}
+
+.pagination>li>a, .pagination>li>span{
+	color: #ddd;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	background-color: #99D1D1;
+	border:#99D1D1;
+}

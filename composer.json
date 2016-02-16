@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"mailgun/mailgun-php":"~1.7.2",
 		"league/commonmark": "^0.13",
-		"roumen/disqus": "^1.2"
+		"roumen/disqus": "^1.2",
+		"erusev/parsedown": "^1.6"
 	},
 	"require-dev":{
 		"barryvdh/laravel-debugbar": "1.8",

@@ -1,6 +1,7 @@
 <?php
 
 use League\CommonMark\CommonMarkConverter;
+// use Erusev\Parsedown\Parsedown;
 
 class PostsController extends \BaseController {
 
@@ -20,7 +21,8 @@ class PostsController extends \BaseController {
 	{
 		$query = Post::with('user');
 		$tags = Tag::with('posts')->paginate(8);
-		$converter = new CommonMarkConverter();
+		$parsedown = new Parsedown();
+		// $converter = new CommonMarkConverter();
 
 
 		if (Input::has('search')){
@@ -37,7 +39,7 @@ class PostsController extends \BaseController {
 			return Response::json(['posts'=>$posts, 'tags'=>$tags]);
 		} else{
 			$posts = $query->paginate(4);
-			return View::make('posts.index', compact('posts', 'tags', 'converter'));
+			return View::make('posts.index', compact('posts', 'tags', 'parsedown'));
 		}
 	}
 
@@ -49,10 +51,12 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		$converter = new CommonMarkConverter();
+		// $converter = new CommonMarkConverter();
+		$parsedown = new Parsedown();
+
 		$tags = Tag::with('posts')->get();
 		// return View::make('posts.create');
-		return View::make('posts.create', compact('tags', 'converter'));
+		return View::make('posts.create', compact('tags', 'parsedown'));
 	}
 
 	/**
@@ -106,7 +110,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$converter = new CommonMarkConverter();
+		// $converter = new CommonMarkConverter();
+		$parsedown = new Parsedown();
 		$tags = Tag::with('posts')->paginate(8);
 		$post = Post::where('slug',$slug)->first();
 		if(!$post) {
@@ -114,7 +119,7 @@ class PostsController extends \BaseController {
 		}
 
 		// return View::make('posts.show')->with('post', $post);
-		return View::make('posts.show', compact('post', 'converter', 'tags'));
+		return View::make('posts.show', compact('post', 'parsedown', 'tags'));
 	}
 
 

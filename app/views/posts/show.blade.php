@@ -18,7 +18,7 @@
         <hr>
 
         <!-- Post Content -->
-        <p class="lead">{{$converter->convertToHtml($post->content)}}</p>
+        <p class="lead">{{$parsedown->text($post->content)}}</p>
         </div>
     <hr>
 @stop
