@@ -6,7 +6,6 @@ class Post extends BaseModel
 
     public static $rules = array(
 		    'title'      => 'required|min:8|max:100',
-		    'subtitle'   => 'required|min:8|max:100',
 		    'content'       => 'required'
 		);
 

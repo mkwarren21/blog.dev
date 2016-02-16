@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 	<p>create a post</p>
 
 		<div class = 'content'>

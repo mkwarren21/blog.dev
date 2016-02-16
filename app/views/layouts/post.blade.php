@@ -6,7 +6,6 @@
 
    	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-markdown.min.css">
-
    	<link rel="stylesheet" type="text/css" href="/css/post.css">
 
    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -20,7 +19,7 @@
             outline: none;
         }
     </style>
-
+   
 
 </head>
 <body>

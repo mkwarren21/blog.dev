@@ -20,6 +20,8 @@ class PostsController extends \BaseController {
 	{
 		$query = Post::with('user');
 		$tags = Tag::with('posts')->paginate(8);
+		$converter = new CommonMarkConverter();
+
 
 		if (Input::has('search')){
 			$search = Input::get('search');
@@ -35,7 +37,7 @@ class PostsController extends \BaseController {
 			return Response::json(['posts'=>$posts, 'tags'=>$tags]);
 		} else{
 			$posts = $query->paginate(4);
-			return View::make('posts.index', compact('posts', 'tags'));
+			return View::make('posts.index', compact('posts', 'tags', 'converter'));
 		}
 	}
 
@@ -68,7 +70,6 @@ class PostsController extends \BaseController {
 			return Redirect::back()->withInput()->withErrors($validator);
 		} else{
 			$post->title = Input::get('title');
-			$post->subtitle = Input::get('subtitle');
 			$post->content = Input::get('content');
 			$post->user_id = Auth::id();
 			$post->image = '/img/264H.jpg';
@@ -106,13 +107,14 @@ class PostsController extends \BaseController {
 	public function show($slug)
 	{
 		$converter = new CommonMarkConverter();
+		$tags = Tag::with('posts')->paginate(8);
 		$post = Post::where('slug',$slug)->first();
 		if(!$post) {
 			App::abort(404);
 		}
 
 		// return View::make('posts.show')->with('post', $post);
-		return View::make('posts.show', compact('post', 'converter'));
+		return View::make('posts.show', compact('post', 'converter', 'tags'));
 	}
 
 

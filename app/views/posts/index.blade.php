@@ -10,6 +10,7 @@
 
     @foreach ($posts as $post)
         <!-- First Blog Post -->
+        <div class = "post">
         <h2>
             <a href="{{{action('PostsController@show', $post->slug)}}}">{{{$post->title}}}</a>
         </h2>
@@ -20,9 +21,9 @@
         <hr>
         <img class="img-responsive" src="http://placehold.it/900x300" alt="">
         <hr>
-        <p>{{{$post->content}}}</p>
+        <p>{{$converter->convertToHtml($post->content)}}</p>
         <a class="btn btn-primary" href="{{{action('PostsController@show', $post->slug)}}}">Read More <i class="fa fa-chevron-right"></i></a>
-
+        </div>
         <hr>
     @endforeach
 
