@@ -7,6 +7,7 @@
             <h1>Mary Kaitlin Warren</h1>
             <hr class = "horizontalrule">
             <h3>Full Stack Web Developer</h3>
+            <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a>
             <br>
            {{--  <a href="{{{action('HomeController@showResume')}}}" class="btn btn-dark btn-lg">Resume</a> --}}
         </div>

@@ -1,6 +1,11 @@
 @extends('layouts.blog')
 
 @section('content')
+
+    <div class="page-header">
+        <h1>Along came 'MK' AS 'Alice'</h1>
+        <h3>A Trip Through the Wonderland of Development</h3>
+    </div>
 	
 	 @foreach ($posts as $post)
 	                <!-- First Blog Post -->
