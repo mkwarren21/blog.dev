@@ -139,8 +139,10 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($slug)
 	{
+		$tags = Tag::with('posts')->get();
 		$post = Post::where('slug',$slug)->first();
-		return View::make('posts.edit')->with('post', $post);
+		return View::make('posts.edit', compact('post', 'tags'));
+
 	}
 
 

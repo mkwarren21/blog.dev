@@ -16,14 +16,14 @@
 		<div class="form-group {{ ($errors->has('content')) ? 'has-error' : '' }}">
 			{{ $errors->first('content', '<div class="alert alert-danger">:message</div>') }}
 			{{ Form::label('content', 'Content') }}
-			{{ Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Enter your content', 'data-provide'=>'markdown', 'data-iconlibrary'=>'fa','value' => '{{{ $post->content }}}') }}
+			{{ Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Enter your content', 'data-provide'=>'markdown', 'data-iconlibrary'=>'fa','value' => '{{{ $post->content }}}']) }}
 		</div>
 
 		<div class="form-group {{ ($errors->has('image')) ? 'has-error' : '' }}">
 			{{ $errors->first('image', '<div class="alert alert-danger">:message</div>') }}
 			{{ Form::label('image', 'Image') }}
 			<p>Current Image:</p>
-			{{{ $postl->image }}}
+			{{{ $post->image }}}
 			{{ Form::file('image') }}
 		</div>
 
