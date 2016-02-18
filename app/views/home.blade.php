@@ -17,8 +17,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>“Get action. Do things; be sane; don’t fritter away your time; create, act, take a place wherever you are and be somebody; get action.”</h2>
-                    <p class="lead">Theodore Roosevelt</p>
+                    <h2>About Me</h2>
+                    <p class="lead">I am a full stack web developer living in Texas. I like solving coding challenges, exploring the magic behind the curtain, and building cool apps. I just got an Arduino.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -149,8 +149,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>"We have a choice to use the gift of our lives to make the world a better place."</h3>
-                    <h1 class = "lead">- Dr. Jane Goodall</h1>
+                    <h2>“Get action. Do things; be sane; don’t fritter away your time; create, act, take a place wherever you are and be somebody; get action.”</h2>
+                    <p class="lead">Theodore Roosevelt</p>
                 </div>
             </div>
         </div>
