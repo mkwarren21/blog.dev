@@ -19,7 +19,9 @@
         </p>
         <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
         <hr>
+        @if (isset($post->image))        
         <img class="img-responsive blog-image" src="{{{$post->image}}}" alt="blog-image">
+        @endif
         <hr>
         <p>{{$parsedown->text($post->content)}}</p>
         {{-- <p>{{$converter->convertToHtml($post->content)}}</p> --}}
@@ -29,15 +31,15 @@
     @endforeach
 
      <!-- Pager -->
-    {{ $posts->links() }}
-    <ul class="pager">
+    {{-- {{ $posts->links() }} --}}
+    {{-- <ul class="pager">
         <li class="previous">
             <a href="#">← Older</a>
         </li>
         <li class="next">
             <a href="#">Newer →</a>
         </li>
-    </ul> 
+    </ul>  --}}
 	
 @stop
 
