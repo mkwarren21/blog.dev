@@ -23,8 +23,8 @@
         <img class="img-responsive blog-image" src="{{{$post->image}}}" alt="blog-image">
         @endif
         <hr>
-        <p>{{$parsedown->text($post->content)}}</p>
-        {{-- <p>{{$converter->convertToHtml($post->content)}}</p> --}}
+{{--         <p>{{$parsedown->text($post->content)}}</p>
+ --}}        {{-- <p>{{$converter->convertToHtml($post->content)}}</p> --}}
         <a class="btn btn-primary" href="{{{action('PostsController@show', $post->slug)}}}">Read More <i class="fa fa-chevron-right"></i></a>
         </div>
         <hr>
