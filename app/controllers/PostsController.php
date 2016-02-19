@@ -85,6 +85,18 @@ class PostsController extends \BaseController {
 			}
 
 			$result = $post->save();
+
+			$posttags = Input::has('tuttags') ? Input::get('tuttags') : array();
+
+			if (Input::has('addtags')){
+				$addtag = Input::get('addtags');
+				$posttags.push($addtag);
+			}
+			
+			$post->tags()->sync($posttags);
+			$post->save();
+
+
 			
 			if($result) {
                 Session::flash('successMessage', 'Great Success!');
