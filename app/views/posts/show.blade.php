@@ -15,7 +15,7 @@
 
         <!-- Preview Image -->
         @if (isset($post->image))        
-            <img class="img-responsive" src="{{{$post->image}}}" alt="blog-image">
+            <img class="img-responsive" src="{{{$post->image}}}" >
         @endif
         <hr>
 

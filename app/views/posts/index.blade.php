@@ -20,7 +20,7 @@
         <p><i class="fa fa-clock-o"></i> {{{$post->created_at}}}</p>
         <hr>
         @if (isset($post->image))        
-        <img class="img-responsive blog-image" src="{{{$post->image}}}" alt="blog-image">
+            <img class="img-responsive blog-image" src="{{{$post->image}}}" >
         @endif
         <hr>
 {{--         <p>{{$parsedown->text($post->content)}}</p>
