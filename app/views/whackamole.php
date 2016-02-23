@@ -1,8 +1,8 @@
 <!DOCTYPE html>	
 <html>
 <head>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/whackamole.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/whackamole.css">
 	<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<title>Catch the Reverse-Flash</title>
 </head>
@@ -45,9 +45,8 @@
 		<div id = "timer">Timer</div>
 		<div id ="highscore">High Score</div>
 	</div>
-	<divclass = "row">
-	<div class = "col-md-8 col-md-offset-2">
-	<div class = "container" id = "mainbox">
+	
+	<div class = "container-fluid" id = "mainbox">
 		<div class = "row">
 		<div class = "molehole col-md-4" id = "a"></div>
 		<div class = "molehole col-md-4" id = "b"></div>
@@ -64,8 +63,8 @@
 		<div class = "molehole col-md-4" id = "i"></div>
 		</div>
 	</div>
-	</div>
-</div>
+	
+
 
 	<div id = "lost">Not this time.</div>
 	<div id = "star_labs"></div>
