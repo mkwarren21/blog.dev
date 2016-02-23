@@ -72,6 +72,11 @@ class HomeController extends BaseController {
 		return View::make('whackamole');
 	}
 
+	public function showWeather()
+	{
+		return View::make('weather_map');
+	}
+
 	public function search()
 	{
 		$search = Input::get('search');

@@ -30,6 +30,8 @@ Route::get('simplesimon', 'HomeController@showSimpleSimon');
 
 Route::get('whackamole', 'HomeController@showWhackamole');
 
+Route::get('weather_map', 'HomeController@showWeather');
+
 Route::get('/search', 'HomeController@search');
 
 Route::get('/search/{tag}', 'HomeController@tags');

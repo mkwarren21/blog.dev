@@ -126,15 +126,15 @@
                                     <a href="{{{action('HomeController@showWhackamole')}}}">
                                         <img class="img-portfolio img-responsive" src="/img/reverseflash.png">
                                     </a>
-                                    <p>A Javascript game built on the jQuery library.</p>
+                                    <p>A JavaScript game built on the jQuery library.</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="portfolio-item">
-                                    <a href="{{{action('HomeController@showSimpleSimon')}}}">
-                                        <img class="img-portfolio img-responsive" src="/img/simplesimon.png">
+                                    <a href="{{{action('HomeController@showWeather')}}}">
+                                        <img class="img-portfolio img-responsive" src="/img/weather.png">
                                     </a>
-                                    <p>A Javascript game that uses a continuous callback function.</p>
+                                    <p>A weather app that uses two APIs (Openweather and Google Maps)</p>
                                 </div>
                             </div>
                         </div>
