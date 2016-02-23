@@ -102,36 +102,40 @@
                     <h2>My Work</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="http://greasemonkey.rocks">
-                                    <img class="img-portfolio img-responsive" src="/img/greasemonkey.png">
-                                </a>
-                                <p>A web resource for DIY automechanics using the Laravel framework and a mySql database.</p>
+                        <div class ="row">
+                            <div class="col-md-6">
+                                <div class="portfolio-item">
+                                    <a href="http://greasemonkey.rocks">
+                                        <img class="img-portfolio img-responsive" src="/img/greasemonkey.png">
+                                    </a>
+                                    <p>A web resource for DIY automechanics using the Laravel framework and a mySql database.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="portfolio-item">
+                                    <a href="https://chrome.google.com/webstore/detail/adeleing/aokkldlmlolojcjaicldakcjbjhjoaen">
+                                        <img class="img-portfolio img-responsive" src="/img/adeling.png">
+                                    </a>
+                                    <p>A chrome extension that generates a random Adele music video.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="https://chrome.google.com/webstore/detail/adeleing/aokkldlmlolojcjaicldakcjbjhjoaen">
-                                    <img class="img-portfolio img-responsive" src="/img/adeling.png">
-                                </a>
-                                <p>A chrome extension that generates a random Adele music video.</p>
+                        <div class = "row">
+                            <div class="col-md-6">
+                                <div class="portfolio-item">
+                                    <a href="{{{action('HomeController@showWhackamole')}}}">
+                                        <img class="img-portfolio img-responsive" src="/img/reverseflash.png">
+                                    </a>
+                                    <p>A Javascript game built on the jQuery library.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="{{{action('HomeController@showWhackamole')}}}">
-                                    <img class="img-portfolio img-responsive" src="/img/reverseflash.png">
-                                </a>
-                                <p>A Javascript game built on the jQuery library.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="{{{action('HomeController@showSimpleSimon')}}}">
-                                    <img class="img-portfolio img-responsive" src="/img/simplesimon.png">
-                                </a>
-                                <p>A Javascript game that uses a continuous callback function.</p>
+                            <div class="col-md-6">
+                                <div class="portfolio-item">
+                                    <a href="{{{action('HomeController@showSimpleSimon')}}}">
+                                        <img class="img-portfolio img-responsive" src="/img/simplesimon.png">
+                                    </a>
+                                    <p>A Javascript game that uses a continuous callback function.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
